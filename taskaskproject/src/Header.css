@@ -1,0 +1,45 @@
+.header { 
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;   
+    z-index: 100; 
+    border-bottom: 1px solid #f9f9f9;
+    padding: 20px;
+}
+
+.searchBar {
+    background-color: #f5f5f5;
+    border: 1px solid darkgrey;
+    border-radius: 20px;
+    font-size: large;
+    height: 50px;
+    width: 1000px;
+    padding: 10px 10px 10px 10px;
+
+    
+}
+.searchBar:hover, .searchBar:focus {
+    border: 1.5px solid #009688;
+    background-color: white;
+  }
+
+.menu {
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center; 
+}
+
+.messagesIcon {
+    padding: 5px;
+    color:black;
+}
+.personIcon {
+    padding: 5px;
+    color: black;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 700; 
+    color: #56DDC0;
+}
