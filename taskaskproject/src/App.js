@@ -1,15 +1,27 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import './App.css';
-import Header from "./Header.js";
-import Posts from "./Posts.js";
-import CreatePosts from "./CreatePosts.js"; 
+import HomePage from "./pages/home";
+import uploadPage from "./pages/uploadPage"
+import page404 from "./pages/404";
 
 function App() {
   return (
     <div className="app">
-      <Header/>
-      {/* <CreatePosts/>  */}
-      <Posts/> 
+
+      <Router> 
+        <Switch> 
+          <Route exact path="/" component={HomePage}/>
+          <Route exact path="/upload" component={uploadPage}/>
+          <Route exact path="/404" component={page404}/>
+          <Redirect to="/404"/> 
+        </Switch>
+      </Router> 
+
+
+
+
+
     </div>
   );
 }

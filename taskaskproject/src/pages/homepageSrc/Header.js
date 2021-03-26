@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Header.css"; 
+import { Link } from "react-router-dom";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import PersonIcon from '@material-ui/icons/Person';
 import IconButton from '@material-ui/core/IconButton';
@@ -23,10 +24,13 @@ function Header() {
     return (
         <div className="header">
             <IconButton > 
-                <div className="logo">
-                    Tasks4Cash $$$
-                </div>
-                {/* create logo soon */}
+                <Link to='/' style={{textDecoration: 'none'} }> 
+                    <div className="logo">
+                        Tasks4Cash $$$
+                    </div>
+                    {/* create logo soon */}
+                </Link>
+               
             </IconButton>
             <ThemeProvider theme={searchBarTheme}> 
                 <InputBase className="searchBar" > 

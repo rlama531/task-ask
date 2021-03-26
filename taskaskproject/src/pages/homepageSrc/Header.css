@@ -3,7 +3,7 @@
     justify-content: space-evenly;
     align-items: center;   
     z-index: 100; 
-    border-bottom: 1px solid #f9f9f9;
+    border-bottom: 2px solid darkgrey;
     padding: 20px;
 }
 

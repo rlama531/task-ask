@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    font-family: 'montserrat';
+}
+
+.uploadForm {
+    background-color: aquamarine;
+    border-radius: 5px; 
+    padding: 20px; 
+    margin: 15px;
+    max-width: 50vw;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+input, select, textarea {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-size:20px;
+  }
+
+
+  input[type=submit]:hover {
+    background-color: #B36680;
+  }
+
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+
+  .submitButton {
+      margin-top: 20px; 
+  }
