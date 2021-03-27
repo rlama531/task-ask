@@ -49,7 +49,7 @@ function uploadForm() {
                     <label className="budget">
                         Budget(USD): 
                         <div> 
-                        <input type="Number" name="taskDescription" />
+                        <input type="Number" name="taskDescription" placeholder="25"/>
                         </div> 
                     </label>
                 </div>

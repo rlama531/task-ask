@@ -23,15 +23,12 @@ const searchBarTheme = createMuiTheme({
 function Header() {
     return (
         <div className="header">
-            <IconButton > 
                 <Link to='/' style={{textDecoration: 'none'} }> 
                     <div className="logo">
                         Tasks4Cash $$$
                     </div>
                     {/* create logo soon */}
                 </Link>
-               
-            </IconButton>
             <ThemeProvider theme={searchBarTheme}> 
                 <InputBase className="searchBar" > 
                     {/* this needs to be changed to have functionallity; 
@@ -42,7 +39,9 @@ function Header() {
             
             <div className="menu"> 
                 <IconButton> 
-                    <MessageIcon fontSize="large" className="messagesIcon"/>
+                    <Link to="/messages" style={{textDecoration: 'none'} }>
+                        <MessageIcon fontSize="large" className="messagesIcon"/>
+                    </Link> 
                 </IconButton>
                 <IconButton> 
                     <PersonIcon fontSize="large" className="personIcon"/> 
