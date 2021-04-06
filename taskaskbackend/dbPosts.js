@@ -2,10 +2,8 @@ import mongoose from "mongoose";
 
 const postSchema = mongoose.Schema({
     name: String, 
-    imgUrl: String, 
-    name: String, 
     category: String,
-    task: String, 
+    description: String, 
     budget: Number 
 });
 

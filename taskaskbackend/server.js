@@ -7,7 +7,7 @@ import Posts from "./dbPosts.js"
 // App config 
 const app = express(); 
 const port = process.env.port || 8001; 
-const connection_url = `mongodb+srv://admin:<password>2@cluster0.vldvn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+const connection_url = `mongodb+srv://admin:<password>@cluster0.vldvn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 
 // Middlewares 
 app.use(express.json()); 
@@ -23,7 +23,7 @@ mongoose.connect(connection_url,  {
 
 // API Endpoints 
 app.get('/', (req, res) => res.status(200).send("HELLO WORLD!!")); 
-app.post('URL HERE', (req, res) => {
+app.post('/upload', (req, res) => {
     const dbPost= req.body; 
 
     Posts.create(dbPost, (err, data) => {
@@ -35,7 +35,7 @@ app.post('URL HERE', (req, res) => {
     });
 }); 
 
-app.get('/URL HERE', (req, res) => {
+app.get('/upload', (req, res) => {
     Posts.find((err, data) => {
         if (err) {
             res.status(500).send(err)

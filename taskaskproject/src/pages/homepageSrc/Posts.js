@@ -1,96 +1,19 @@
-import React, { useState } from 'react'
-import './Posts.css'
-
+import React, { useState, useEffect } from 'react';
+import './Posts.css';
+import axios from './axios';
 function Posts() {
-    const [allPosts, setPosts] = useState([
-        {
-            name: "Robert", 
-            category: "Editing",
-            task: "I need someone to asdfkajsldfjad", 
-            budget: "$100", 
-            postID: "01",
-        }, 
-        {
-            name: "james", 
-            category: "Tutoring",
-            task: "I need someone to asdfkajsldfjad", 
-            budget: "203", 
-            postID: "02", 
-        },
-        {
-            name: "bud", 
-            category: "Photography",
-            task: "I need someone to asdfkajsldfjad", 
-            budget: "50",
-            postID: "03",  
-        }, 
-        {
-            name: "quincy", 
-            category: "Graphic Design",
-            task: "I need someone to asdfkajsldfjad", 
-            budget: "$10", 
-            postID: "04",
-        }, 
-        {
-            name: "bigdog", 
-            category: "Web Development",
-            task: "I need someone to asdfkajsldfjad", 
-            budget: "$1000000", 
-            postID: "05",
-        }, 
-        {
-            name: "bigdog", 
-            category: "Web Development",
-            task: "I need someone to asdfkajsldfjad", 
-            budget: "$1000000", 
-            postID: "05",
-        },
-        {
-            name: "bigdog", 
-            category: "Web Development",
-            task: "I need someone to asdfkajsldfjad", 
-            budget: "$1000000", 
-            postID: "05",
-        },
-        {
-            name: "bigdog", 
-            category: "Web Development",
-            task: "I need someone to asdfkajsldfjad", 
-            budget: "$1000000", 
-            postID: "05",
-        },
-        {
-            name: "bigdog", 
-            category: "Web Development",
-            task: "I need someone to asdfkajsldfjad", 
-            budget: "$1000000", 
-            postID: "05",
-        },
-        {
-            name: "bigdog", 
-            category: "Web Development",
-            task: "I need someone to asdfkajsldfjad", 
-            budget: "$1000000", 
-            postID: "05",
-        },
-        {
-            name: "bigdog", 
-            category: "Web Development",
-            task: "I need someone to asdfkajsldfjad", 
-            budget: "$1000000", 
-            postID: "05",
-        },
-        {
-            name: "bigdog", 
-            category: "Web Development",
-            task: "I need someone to asdfkajsldfjad", 
-            budget: "$1000000", 
-            postID: "05",
-        },
+    const [allPosts, setPosts] = useState([]); 
+    
+    useEffect(() => {
+        async function fetchData() { 
+            const req = await axios.get('/upload');
+            setPosts(req.data);
 
-    
-    ]);
-    
+        }
+
+        fetchData(); 
+
+    }, []);
 
     return (
         <div className="allPosts">
@@ -98,7 +21,7 @@ function Posts() {
                 {allPosts.map((post) => (
                     <div 
                         className="clickablePost" 
-                        key={post.postID}
+                        key={post._id}
                     >
 
                         <div className="individualPost"> 
@@ -109,7 +32,7 @@ function Posts() {
                                 Name: {post.name}
                             </h2> 
                             <h3> 
-                                Task Description: {post.task}
+                                Task Description: {post.description}
                             </h3> 
 
                             <h4> 
