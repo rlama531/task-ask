@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from "mongoose";
 import Cors from 'cors';
-import Posts from "./dbPosts.js"
+import Post from "./dbPosts.js"
 //import password from "./private.json";
 
 // App config 
@@ -26,7 +26,7 @@ app.get('/', (req, res) => res.status(200).send("HELLO WORLD!!"));
 app.post('/upload', (req, res) => {
     const dbPost= req.body; 
 
-    Posts.create(dbPost, (err, data) => {
+    Post.create(dbPost, (err, data) => {
         if (err) {
             res.status(500).send(err); 
         } else {
@@ -36,7 +36,7 @@ app.post('/upload', (req, res) => {
 }); 
 
 app.get('/upload', (req, res) => {
-    Posts.find((err, data) => {
+    Post.find((err, data) => {
         if (err) {
             res.status(500).send(err)
         } else {
