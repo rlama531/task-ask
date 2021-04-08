@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./uploadForm.css"
+import axios from './axios';
 
 function uploadForm() {
+
+
     return (
         <div>
-            <form className="uploadForm">
+            <form className="uploadForm" >
                 <div>
                         <label className="uploadName" >
                             Name:
@@ -17,7 +20,7 @@ function uploadForm() {
                 <div> 
                     <label className="category"> Category: </label>
                     <div> 
-                        <select name="categories" id='categories'>
+                        <select name="categories" id='categories' >
                             <optgroup label="Graphic Design">
                                 <option value="Artwork">Artwork</option>
                                 <option value="Business-Cards">Business Cards</option>
@@ -49,7 +52,7 @@ function uploadForm() {
                     <label className="budget">
                         Budget(USD): 
                         <div> 
-                        <input type="Number" name="taskDescription" placeholder="25"/>
+                        <input type="Number" name="taskDescription"  placeholder="25"/>
                         </div> 
                     </label>
                 </div>

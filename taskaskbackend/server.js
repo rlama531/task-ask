@@ -7,7 +7,7 @@ import Post from "./dbPosts.js"
 // App config 
 const app = express(); 
 const port = process.env.port || 8001; 
-const connection_url = `mongodb+srv://admin:<password>@cluster0.vldvn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+const connection_url = `mongodb+srv://admin:9Lv9TkdGHZ7P8e2@cluster0.vldvn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 
 // Middlewares 
 app.use(express.json()); 
